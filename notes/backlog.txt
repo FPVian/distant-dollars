@@ -1,0 +1,7 @@
+ssl on google workspace
+setting up repo structure for python application
+deployment to aws
+frontend that updates on reload
+glassdoor, indeed, linkedin developer accounts
+google adsense
+set up recurring domain billing
