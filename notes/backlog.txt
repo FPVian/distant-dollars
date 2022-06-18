@@ -5,3 +5,10 @@ frontend that updates on reload
 glassdoor, indeed, linkedin developer accounts
 google adsense
 set up recurring domain billing
+
+
+django
+dash
+pandas
+plotly
+SQLAlchemy
