@@ -5,9 +5,13 @@ frontend that updates on reload
 glassdoor, indeed, linkedin developer accounts
 google adsense
 set up recurring domain billing
+email alerts when ec2 instance goes down
 
 
+Tech Stack:
 django
+django channels
+daphne web server
 dash
 pandas
 plotly
