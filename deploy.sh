@@ -1,13 +1,10 @@
 #!/bin/sh
-sudo apt update
-sudo apt upgrade
-sudo apt install python3.10
-sudo apt install python3-pip
-sudo apt install python3.10-venv
-
-python3 -m venv venv --upgrade-deps
+sudo git pull origin main
+cp ../.env .
 source venv/bin/activate
-
-sudo git pull origin main # I am here
 sudo pip3 install -r requirements.txt
-daphne distant-dollars.asgi:application # run from manage.py dir, on PATH, sub names
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py collectstatic
+sudo systemctl restart nginx
+sudo daphne ddsite.asgi:application

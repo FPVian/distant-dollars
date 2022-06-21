@@ -2,7 +2,7 @@
 
 Runs on:
 - Python (Pandas library)
-- Django web framework
-- Daphne web server
+- Django Channels web framework
+- Nginx, Daphne web servers
 - PostreSQL database
-- AWS hosting
+- AWS Ubuntu 22.04
