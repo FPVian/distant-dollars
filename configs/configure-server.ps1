@@ -1,7 +1,7 @@
 scp -i "distant-dollars-key.pem" "..\.env" ubuntu@ec2-18-190-53-205.us-east-2.compute.amazonaws.com:~
 ssh -i "distant-dollars-key.pem" ubuntu@ec2-18-190-53-205.us-east-2.compute.amazonaws.com
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 sudo apt install python3.10
 sudo apt install python3-pip
 sudo apt install python3.10-venv
