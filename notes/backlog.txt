@@ -1,7 +1,11 @@
-deploy checklist
+django deploy checklist
 install postgresql server (remove db.sqlite3)
 glassdoor, indeed, linkedin developer accounts
 google adsense
 set up recurring domain billing
 email alerts when ec2 instance goes down
 install: dash, plotly, sqlalchemy
+
+
+make sure http://www. is rerouted instead of 404
+fix .env swapping
