@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings  # For debugging static files
+from django.conf.urls.static import static  # For debugging static files
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # For debugging static files

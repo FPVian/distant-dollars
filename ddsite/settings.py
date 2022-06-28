@@ -32,7 +32,7 @@ DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = [
     'www.distantdollars.com',
-    'distantdollars.com'
+    'distantdollars.com',
 ]
 
 
@@ -63,7 +63,7 @@ ROOT_URLCONF = 'ddsite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'home/templates')],  # had to add this to get templates to work in home app
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -136,3 +136,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')  # passed by nginx.conf
 STATIC_ROOT = f'{BASE_DIR}/static/'
 ASGI_APPLICATION = "ddsite.asgi.application"  # for channels integration
+STATICFILES_DIRS = [  # For static files
+    os.path.join(BASE_DIR, "home/static"),
+]
