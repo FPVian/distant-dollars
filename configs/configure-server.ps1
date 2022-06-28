@@ -10,16 +10,17 @@ sudo apt install supervisor -y
 sudo apt install daphne -y
 
 mkdir logs
-git clone https://github.com/FPVian/distant-dollars.git
-cp .env distant-dollars/
+sudo git clone https://github.com/FPVian/distant-dollars.git
+sudo cp .env distant-dollars/
 cd distant-dollars/
 # python3 -m venv venv --upgrade-deps
 # source venv/bin/activate
 sudo pip3 install -r requirements.txt
 
-python3 manage.py makemigrations
-python3 manage.py migrate
-python3 manage.py collectstatic -yes
+sudo python3 manage.py makemigrations
+sudo python3 manage.py migrate
+sudo python3 manage.py collectstatic
+-yes
 
 # python3 
 # import django

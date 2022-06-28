@@ -1,10 +1,12 @@
 #!/bin/sh
+cd distant-dollars/
 sudo git pull origin main
-cp ../.env .
+sudo cp ../.env .
 #source venv/bin/activate
 sudo pip3 install -r requirements.txt
-python3 manage.py makemigrations
-python3 manage.py migrate
-python3 manage.py collectstatic
+sudo python3 manage.py makemigrations
+sudo python3 manage.py migrate
+sudo python3 manage.py collectstatic
+-yes
 sudo systemctl restart nginx
-#sudo daphne ddsite.asgi:application
+sudo supervisorctl restart all
