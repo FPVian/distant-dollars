@@ -34,7 +34,8 @@ ALLOWED_HOSTS = [
     'www.distantdollars.com',
     'distantdollars.com',
 ]
-
+if DEBUG is True:
+    ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -134,7 +135,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # User-added
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')  # passed by nginx.conf
-STATIC_ROOT = f'{BASE_DIR}/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 ASGI_APPLICATION = "ddsite.asgi.application"  # for channels integration
 STATICFILES_DIRS = [  # For static files
     os.path.join(BASE_DIR, "home/static"),

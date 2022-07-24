@@ -9,3 +9,4 @@ install: dash, plotly, sqlalchemy
 
 make sure http://www. is rerouted instead of 404
 fix .env swapping
+static files in prod nginx

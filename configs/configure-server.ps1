@@ -1,4 +1,4 @@
-scp -i "distant-dollars-key.pem" "..\.env" ubuntu@ec2-18-190-53-205.us-east-2.compute.amazonaws.com:~
+scp -i "distant-dollars-key.pem" "..\.env.prod" ubuntu@ec2-18-190-53-205.us-east-2.compute.amazonaws.com:~/.env
 ssh -i "distant-dollars-key.pem" ubuntu@ec2-18-190-53-205.us-east-2.compute.amazonaws.com
 sudo apt update
 sudo apt upgrade -y
@@ -28,10 +28,11 @@ sudo python3 manage.py collectstatic
 # exit()
 
 sudo cp configs/dd-nginx.conf /etc/nginx/sites-available/dd-nginx.conf
-sudo nginx -t #  verify configuration
+sudo nginx -t  # verify configuration
 sudo ln -s /etc/nginx/sites-available/dd-nginx.conf /etc/nginx/sites-enabled/
 sudo rm /etc/nginx/sites-enabled/default
 sudo systemctl restart nginx
+sudo systemctl enable nginx  # Just in case, this will make sure it restarts after a reboot
 
 sudo snap install core; sudo snap refresh core
 sudo apt-get remove certbot
@@ -46,4 +47,4 @@ sudo mkdir /run/daphne
 sudo cp configs/daphne.conf /usr/lib/tmpfiles.d/daphne.conf
 sudo supervisorctl reread
 sudo supervisorctl update
-sudo service nginx reload
+sudo systemctl reload nginx

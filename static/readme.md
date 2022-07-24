@@ -1,0 +1,1 @@
+folder for django to collect static files
